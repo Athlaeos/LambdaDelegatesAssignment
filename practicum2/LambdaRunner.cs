@@ -33,20 +33,16 @@ namespace practicum2
             output.AppendFormat("InBetween({0},{1},{2}) = {3}\n", num1, num2, num3, inBetween(num1,num2,num3));
 
             //ResetName
-            Predicate<Person> resetName = ResetName;
+            Action<Person> resetName = ResetName;
             Person p = new Person() {Name = "Dirk"};
-            output.AppendFormat("ResetName, daarna (Name == null) = {0}\n",resetName(p));
+            resetName(p);
+            output.AppendFormat("ResetName, daarna (Name == null) = {0}\n", p.Name == null);
 
             return output.ToString();
         }
 
-        private static bool ResetName(Person p){
+        private static void ResetName(Person p){
             p.Name = null;
-            if (p.Name == null){
-                return true;
-            } else {
-                return false;
-            }
         }
 
         private static String num2string(int x)
