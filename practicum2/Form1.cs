@@ -35,7 +35,7 @@ namespace practicum2
             String[] splittextmethod = methodOutput.Text.Split(new string[] { "\n" }, StringSplitOptions.None);
             bool ok = true;
             for (int i = 0; i < splittextmethod.Length - 1; i++){
-                if (splittextlambda[i].Split(new string[] { " = " }, StringSplitOptions.None)[1] != splittextmethod[i].Split(new string[] { " = " }, StringSplitOptions.None)[1]){
+                if (splittextlambda[i].Split(new string[] { " = " }, StringSplitOptions.None).Last() != splittextmethod[i].Split(new string[] { " = " }, StringSplitOptions.None).Last()){
                     ok = false;
                     break;
                 }
